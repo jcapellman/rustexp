@@ -1,6 +1,17 @@
 use std::env;
 
+fn parse(args: Vec<String>) {
+    if args.len() == 1 {
+        println!("No args passed in");
+
+        return;
+    }
+
+    for arg in args.iter().skip(1) {
+        println!("{}", arg);
+    }
+}
+
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    dbg!(args);
+    parse(env::args().collect());
 }
